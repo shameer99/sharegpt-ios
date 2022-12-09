@@ -4,9 +4,9 @@ Easily share permanent links to ChatGPT conversations with your friends. Now on 
 
 Make sure to enable popups in Settings -> Safari:
 <p float="left">
-<img f src="./images/ios/popup_settings.jpeg" width="100" />
+<img f src="./images/ios/popup_settings.jpeg" width="200" />
 </p>
 
 <p float="left">
-  <img src="./images/ios/share_button.PNG" width="100" />
+  <img src="./images/ios/share_button.PNG" width="200" />
 </p>
