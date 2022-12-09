@@ -68,10 +68,19 @@ function init() {
     const { id } = await res.json();
     const url = `https://shareg.pt/${id}`;
 
-    const opened = window.open(url, "_blank");
-
-    if (opened == null || typeof(open)=='undefined') {
-      alert('ShareGPT: popup blocked :(');
+    const shareData = {
+      title: 'ShareGPT',
+      text: 'Shared ChatGPT Conversation',
+      url: url,
+    }
+    if (navigator.canShare(shareData)) {
+      navigator.share(shareData);
+    }
+    else {
+      const popUpOpened = window.open(url, "_blank");
+      if (popUpOpened == null || typeof (popUpOpened) == 'undefined') {
+        alert('ShareGPT: popup blocked :(');
+      }
     }
 
     setTimeout(() => {
@@ -135,7 +144,7 @@ function requestAnimationFrameAsync() {
 }
 
 /** Promise that constantly checks for the buttons wrapper to appear in the DOM, resolving once it appears. */
-function waitForTryAgainButton () {
+function waitForTryAgainButton() {
   const buttonWrapper = document.querySelector(BUTTON_TRY_AGAIN_SELECTOR);
 
   if (buttonWrapper) {
